@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juros Composto e Juros Simples </title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <img id="icon" src="calculadora.png" alt="" width="20px">
+    </header>
+    <h1>Calculadora de Juros</h1>
+  <form>
+    <label for="capital">Capital:</label>
+    <input type="number" id="capital" name="capital" required>
+
+    <label for="taxa">Taxa%:</label>
+    <input type="percentage" id="taxa" name="taxa" required>
+
+    <label for="tempo">Tempo:</label>
+    <input type="number" id="tempo" name="tempo" required>
+
+    <button id="simples">Calcular Juros Simples</button>
+    <button id="composto">Calcular Juros Compostos</button>
+    </form>
+
+<script>
+function JurosSimples() {
+  var capital = parseFloat(document.getElementById('capital').value);
+  var taxa = parseFloat(document.getElementById('taxa').value);
+  var tempo = parseFloat(document.getElementById('tempo').value);
+
+  var juros = capital * taxa * tempo;
+  var montante = capital + juros;
+
+  alert('O juros simples é: ' + montante.toFixed(2));
+}
+
+function JurosCompostos() {
+  var capital = parseFloat(document.getElementById('capital').value);
+  var taxa = parseFloat(document.getElementById('taxa').value);
+  var tempo = parseFloat(document.getElementById('tempo').value);
+
+  var n = 12; 
+  var juros = capital * Math.pow(1 + taxa / n, n * tempo) - capital;
+  var montante = capital + juros;
+
+  alert('O juros compostos é: ' + montante.toFixed(2));
+}
+
+document.getElementById('simples').addEventListener('click', JurosSimples);
+document.getElementById('composto').addEventListener('click', JurosCompostos);
+
+
+const icon = document.getElementById('icon');
+
+icon.addEventListener('mouseover', () => {
+    icon.style.animation = 'jump 1s infinite';
+});
+
+icon.addEventListener('mouseout', () => {
+    icon.style.animation = 'none';
+});
+</script>
+
+</body>
+</html>

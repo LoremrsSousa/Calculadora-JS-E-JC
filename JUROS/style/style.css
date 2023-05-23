@@ -1,0 +1,57 @@
+*{
+    background-color: rgb(250, 215, 245);
+}
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+h1 {
+        text-align: center;
+    }
+
+form {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        margin: 20px auto;
+    }
+
+label {
+        margin-bottom: 5px;
+    }
+
+input {
+        padding: 5px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+    }
+
+button {
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+
+button#simples {
+        background-color: #a218d4;
+        color: white;
+        border: none;
+    }
+
+button#composto {
+        background-color: #ea057c;
+        color: white;
+        border: none;
+    }
+
+button#simples:hover,
+button#composto:hover {
+        opacity: 0.8;
+    }
